@@ -10,3 +10,41 @@ print('在某些情况下，会存在一个隐含的假设，允许你不使 \
 x	=	2
 y	=	3
 print(x	!=	y) #返回True
+
+number = int(input())
+while number > 0:
+    print('大于零')
+    # number = 0
+    break
+else:
+     print('小于等零')
+
+for i in range(number):
+    print(i)
+else:
+    print('结束')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
