@@ -1,5 +1,6 @@
 __author__ = 'Test-YLL'
 # -*- coding:utf-8 -*-
+import sys
 
 print('你好，世界！')
 print('Hello world！')
@@ -41,9 +42,9 @@ print(print_max.__doc__)
 
 print('010','12345678',sep='-')
 
+print('name',sys.__name__)
 
-
-
+print(dir(sys))
 
 
 
