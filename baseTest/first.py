@@ -132,6 +132,22 @@ os.getcwd()取当前目录
 os.path.dirname(os.getcwd())取当前目录上一级目录
 
 '''
+import re
+def transformCodec(re_data):#ascii (gbk) 转 unicode
+    try:
+        re_data = re_data.decode('gbk')
+    except Exception as error:
+        print(error)
+        print('delete illegal string,try again...')
+
+        pos = re.findall(r'decodebytesinposition([\d]+)-([\d]+):illegal',str(error).replace(' ',''))
+        if len(pos)==1:
+            re_data = re_data[0:int(pos[0][0])]+re_data[int(pos[0][1]):]
+            re_data = transformCodec(re_data)
+            return re_data
+    return re_data
+
+
 # textFile = open(os.path.pardir +'\\readme.txt')
 # textFile ='C:\\Users\\Test-YLL\\PycharmProjects\\python3\\test.txt'
 # textFile =u'test.txt'
@@ -147,7 +163,8 @@ textFile =os.path.dirname(os.getcwd())+r'\readme.txt'
 print(textFile)
 with open(textFile,'rb') as file_object:
 # with open(textFile,'r', encoding='gbk') as file_object:
-    contents = file_object.read()
+#      contents = file_object.read()
+    contents = transformCodec( file_object.read()) #转码
     print(contents)
 
 
