@@ -1,5 +1,6 @@
 __author__ = 'Test-YLL'
 # -*- coding:utf-8 -*-
+import os
 
 print("Hello Python interpreter!")
 print("中文也没问题!")
@@ -126,7 +127,16 @@ print(my_tesla.get_descriptive_name())
 
 
 '''
+文件处理
+os.getcwd()取当前目录
+os.path.dirname(os.getcwd())取当前目录上一级目录
 
 '''
-
+# textFile = open(os.path.pardir +'\\readme.txt')
+textFile =u'C:\Users\Test-YLL\PycharmProjects\python3\readme.txt'
+print(textFile)
+# with open('test.txt') as file_object:
+with open(textFile) as file_object:
+    contents = file_object.read()
+    print(contents)
 
