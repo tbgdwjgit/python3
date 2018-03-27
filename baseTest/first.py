@@ -133,7 +133,8 @@ os.path.dirname(os.getcwd())取当前目录上一级目录
 
 '''
 # textFile = open(os.path.pardir +'\\readme.txt')
-textFile =u'C:\Users\Test-YLL\PycharmProjects\python3\readme.txt'
+# textFile =u'C:\Users\Test-YLL\PycharmProjects\python3\readme.txt'
+textFile =u'test.txt'
 print(textFile)
 # with open('test.txt') as file_object:
 with open(textFile) as file_object:
