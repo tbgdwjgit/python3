@@ -133,11 +133,21 @@ os.path.dirname(os.getcwd())取当前目录上一级目录
 
 '''
 # textFile = open(os.path.pardir +'\\readme.txt')
-# textFile =u'C:\Users\Test-YLL\PycharmProjects\python3\readme.txt'
-textFile =u'test.txt'
+# textFile ='C:\\Users\\Test-YLL\\PycharmProjects\\python3\\test.txt'
+# textFile =u'test.txt'
+# print(textFile)
+# # with open('test.txt') as file_object:
+# with open(textFile) as file_object:
+#     contents = file_object.read()
+#     print(contents)
+
+# print(os.getcwd())
+# print(os.path.dirname(os.getcwd()))
+textFile =os.path.dirname(os.getcwd())+r'\readme.txt'
 print(textFile)
-# with open('test.txt') as file_object:
-with open(textFile) as file_object:
+with open(textFile,'rb') as file_object:
+# with open(textFile,'r', encoding='gbk') as file_object:
     contents = file_object.read()
     print(contents)
+
 
