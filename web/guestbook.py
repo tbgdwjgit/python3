@@ -26,8 +26,31 @@ def save_data(name, comment, create_at):
     # 关闭数据库文件
     database.close()
 
+def load_data():
+    """返回已提交的数据
+    """
+    # 通过shelve模块打开数据库文件
+    database = shelve.open(DATA_FILE)
+    # 返回greeting_list。如果没有数据则返回空表
+    greeting_list = database.get('greeting_list', [])
+    database.close()
+    return greeting_list
 
-'''写入读取'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''写入读取测试'''
 import datetime
 
 # save_data('test', 'test comment',datetime.datetime(2018, 3, 28, 10, 0, 0))
@@ -35,3 +58,4 @@ import datetime
 # db = shelve.open(DATA_FILE)  #打开文件
 # print(db['greeting_list'])  #向从字典中获取键的方式一样读取内容
 # db.close()  #关闭文件
+# print(load_data())
