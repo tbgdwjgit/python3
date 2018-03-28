@@ -2,27 +2,27 @@ __author__ = 'Test-YLL'
 
 # coding: utf-8
 import shelve
-'''
-shelveÊÇpythonµÄ×Ô´ømodel¡£
-shelveÀàËÆÓÚÒ»¸ö´æ´¢³Ö¾Ã»¯¶ÔÏóµÄ³Ö¾Ã»¯×Öµä£¬¼´×ÖµäÎÄ¼ş¡£
-Ê¹ÓÃ·½·¨Ò²ÀàËÆÓÚ×Öµä¡£
-'''
+
 DATA_FILE = 'guestbook.dat'
 
 def save_data(name, comment, create_at):
-    """±£´æÌá½»µÄÊı¾İ
-    """
-# Í¨¹ıshelveÄ£¿é´ò¿ªÊı¾İ¿âÎÄ¼ş
+    '''ä¿å­˜æäº¤çš„æ•°æ®'''
+
+   # é€šè¿‡shelveæ¨¡å—æ‰“å¼€æ•°æ®åº“æ–‡ä»¶
     database = shelve.open(DATA_FILE)
-    # Èç¹ûÊı¾İ¿âÖĞÃ»ÓĞgreeting_list£¬¾ÍĞÂ½¨Ò»¸ö±í
+    # å¦‚æœæ•°æ®åº“ä¸­æ²¡æœ‰greeting_listï¼Œå°±æ–°å»ºä¸€ä¸ªè¡¨
     if 'greeting_list' not in database:
         greeting_list = []
     else:
-        # ´ÓÊı¾İ¿â»ñÈ¡Êı¾İ
+        # ä»æ•°æ®åº“è·å–æ•°æ®
         greeting_list = database['greeting_list']
-    # ½«Ìá½»µÄÊı¾İÌí¼Óµ½±íÍ·
-    greeting_list.insert(0, {'name': name,'comment': comment,'create_at': create_at,})
-    # ¸üĞÂÊı¾İ¿â
+    # å°†æäº¤çš„æ•°æ®æ·»åŠ åˆ°è¡¨å¤´
+    greeting_list.insert(0, {
+        'name': name,
+        'comment': comment,
+        'create_at': create_at,
+    })
+    # æ›´æ–°æ•°æ®åº“
     database['greeting_list'] = greeting_list
-    # ¹Ø±ÕÊı¾İ¿âÎÄ¼ş
+    # å…³é—­æ•°æ®åº“æ–‡ä»¶
     database.close()
