@@ -7,8 +7,7 @@ DATA_FILE = 'guestbook.dat'
 
 def save_data(name, comment, create_at):
     '''保存提交的数据'''
-
-   # 通过shelve模块打开数据库文件
+    # 通过shelve模块打开数据库文件
     database = shelve.open(DATA_FILE)
     # 如果数据库中没有greeting_list，就新建一个表
     if 'greeting_list' not in database:
@@ -26,3 +25,13 @@ def save_data(name, comment, create_at):
     database['greeting_list'] = greeting_list
     # 关闭数据库文件
     database.close()
+
+
+'''写入读取'''
+import datetime
+
+# save_data('test', 'test comment',datetime.datetime(2018, 3, 28, 10, 0, 0))
+
+# db = shelve.open(DATA_FILE)  #打开文件
+# print(db['greeting_list'])  #向从字典中获取键的方式一样读取内容
+# db.close()  #关闭文件
