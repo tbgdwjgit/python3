@@ -48,8 +48,6 @@ def load_data():
 
 
 
-
-
 '''写入读取测试'''
 import datetime
 
