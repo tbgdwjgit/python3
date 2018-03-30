@@ -54,8 +54,7 @@ class	Person:
 p	=	Person()
 p.say_hi()
 
-
-
+print_max(12,1)
 
 
 

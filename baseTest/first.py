@@ -193,4 +193,5 @@ ax.set_xlabel('BMI')
 ax.set_ylabel('Sum of Sales')
 ax.set_title('BMI wise Sum of Sales')
 var.plot(kind='line')
+
 plt.show()
