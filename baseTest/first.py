@@ -159,12 +159,38 @@ def transformCodec(re_data):#ascii (gbk) 转 unicode
 
 # print(os.getcwd())
 # print(os.path.dirname(os.getcwd()))
-textFile =os.path.dirname(os.getcwd())+r'\readme.txt'
-print(textFile)
-with open(textFile,'rb') as file_object:
-# with open(textFile,'r', encoding='gbk') as file_object:
-#      contents = file_object.read()
-    contents = transformCodec( file_object.read()) #转码
-    print(contents)
+# textFile =os.path.dirname(os.getcwd())+r'\readme.txt'
+# print(textFile)
+# with open(textFile,'rb') as file_object:
+# # with open(textFile,'r', encoding='gbk') as file_object:
+# #      contents = file_object.read()
+#     contents = transformCodec( file_object.read()) #转码
+#     print(contents)
 
+'''
+Python数据可视化：Matplotlib
+pip install matplotlib
+pip install pandas
+pip install xlrd
 
+'''
+# a = 5
+# matplotlib.lines
+# from matplotlib.pyplot import plot
+# plot(a, a**2)
+import matplotlib.pyplot as plt
+import pandas as pd
+# import seaborn as sns
+import numpy as np
+
+# 0、导入数据集
+df = pd.read_excel('first.xlsx', 'Sheet1')
+
+var = df.groupby('BMI').Sales.sum()
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.set_xlabel('BMI')
+ax.set_ylabel('Sum of Sales')
+ax.set_title('BMI wise Sum of Sales')
+var.plot(kind='line')
+plt.show()
