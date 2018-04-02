@@ -6,11 +6,11 @@ import easygui
 
 # easygui.msgbox('wwqwq')
 
-ﬂavor = easygui.choicebox("What is your favorite ice cream ﬂavor?",
-                  choices = ['Vanilla', 'Chocolate', 'Strawberry'] )
-easygui.msgbox ("You picked " + ﬂavor)
+# ﬂavor = easygui.choicebox("What is your favorite ice cream ﬂavor?",
+#                   choices = ['Vanilla', 'Chocolate', 'Strawberry'] )
+# easygui.msgbox ("You picked " + ﬂavor)
 
-
+easygui.fileopenbox()
 
 
 
