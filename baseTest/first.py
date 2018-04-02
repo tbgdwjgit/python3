@@ -5,6 +5,10 @@ import os
 print("Hello Python interpreter!")
 print("中文也没问题!")
 
+print('翻倍'*3)
+print('45+55')
+print(45+55)
+
 #注释
 '''
 多行
@@ -178,20 +182,21 @@ pip install xlrd
 # matplotlib.lines
 # from matplotlib.pyplot import plot
 # plot(a, a**2)
-import matplotlib.pyplot as plt
-import pandas as pd
-# import seaborn as sns
-import numpy as np
 
-# 0、导入数据集
-df = pd.read_excel('first.xlsx', 'Sheet1')
-
-var = df.groupby('BMI').Sales.sum()
-fig = plt.figure()
-ax = fig.add_subplot(111)
-ax.set_xlabel('BMI')
-ax.set_ylabel('Sum of Sales')
-ax.set_title('BMI wise Sum of Sales')
-var.plot(kind='line')
-
-plt.show()
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# # import seaborn as sns
+# import numpy as np
+#
+# # 0、导入数据集
+# df = pd.read_excel('first.xlsx', 'Sheet1')
+#
+# var = df.groupby('BMI').Sales.sum()
+# fig = plt.figure()
+# ax = fig.add_subplot(111)
+# ax.set_xlabel('BMI')
+# ax.set_ylabel('Sum of Sales')
+# ax.set_title('BMI wise Sum of Sales')
+# var.plot(kind='line')
+#
+# plt.show()
