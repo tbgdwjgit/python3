@@ -56,7 +56,7 @@ p.say_hi()
 
 print_max(12,1)
 
-
+print('重复'*3)
 
 
 
