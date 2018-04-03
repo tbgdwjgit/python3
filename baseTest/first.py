@@ -25,6 +25,28 @@ print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 
 '''
 
+'''
+列表
+'''
+letters =[2,22,'2cd',5]
+print(letters[1])
+#append()和 extend()的区别
+letters.append('vvv')
+letters.extend(['mmm'])
+letters.extend('mmm')
+letters.insert(3,'55')
+print(letters)
+letters.remove('55')
+print(letters)
+del letters[0]
+print(letters)
+print(letters.pop(1))
+print(letters.pop(1))
+print(letters.pop(0))
+print(letters)
+letters.sort()
+print(letters)
+
 """
 控制流
 """
@@ -65,11 +87,11 @@ print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 '''
 函数
 '''
-def hello(name):
-    print('Hello ' + name)
-
-hello('Alice')
-hello('Bob')
+# def hello(name):
+#     print('Hello ' + name)
+#
+# hello('Alice')
+# hello('Bob')
 
 
 '''类'''
@@ -94,40 +116,40 @@ class Dog():
 # d.sit()
 
 '''继承'''
-class Car():
-    """一次模拟汽车的简单尝试"""
-
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0
-
-    def get_descriptive_name(self):
-        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
-        return long_name.title()
-
-    def read_odometer(self):
-        print("This car has " + str(self.odometer_reading) + " miles on it.")
-
-    def update_odometer(self, mileage):
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print("You can't roll back an odometer!")
-
-    def increment_odometer(self, miles):
-        self.odometer_reading += miles
-
-class ElectricCar(Car):
-    """电动汽车的独特之处"""
-
-    def __init__(self, make, model, year):
-        """初始化父类的属性"""
-        super().__init__(make, model, year)
-
-my_tesla = ElectricCar('tesla', 'model s', 2016)
-print(my_tesla.get_descriptive_name())
+# class Car():
+#     """一次模拟汽车的简单尝试"""
+#
+#     def __init__(self, make, model, year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odometer_reading = 0
+#
+#     def get_descriptive_name(self):
+#         long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+#         return long_name.title()
+#
+#     def read_odometer(self):
+#         print("This car has " + str(self.odometer_reading) + " miles on it.")
+#
+#     def update_odometer(self, mileage):
+#         if mileage >= self.odometer_reading:
+#             self.odometer_reading = mileage
+#         else:
+#             print("You can't roll back an odometer!")
+#
+#     def increment_odometer(self, miles):
+#         self.odometer_reading += miles
+#
+# class ElectricCar(Car):
+#     """电动汽车的独特之处"""
+#
+#     def __init__(self, make, model, year):
+#         """初始化父类的属性"""
+#         super().__init__(make, model, year)
+#
+# my_tesla = ElectricCar('tesla', 'model s', 2016)
+# print(my_tesla.get_descriptive_name())
 
 
 '''
