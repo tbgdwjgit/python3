@@ -28,24 +28,26 @@ print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 '''
 列表
 '''
-letters =[2,22,'2cd',5]
-print(letters[1])
-#append()和 extend()的区别
-letters.append('vvv')
-letters.extend(['mmm'])
-letters.extend('mmm')
-letters.insert(3,'55')
-print(letters)
-letters.remove('55')
-print(letters)
-del letters[0]
-print(letters)
-print(letters.pop(1))
-print(letters.pop(1))
-print(letters.pop(0))
-print(letters)
-letters.sort()
-print(letters)
+# letters =[2,22,'2cd',5]
+# print(letters[1])
+# #append()和 extend()的区别
+# letters.append('vvv')
+# letters.extend(['mmm'])
+# letters.extend('mmm')
+# letters.insert(3,'55')
+# print(letters)
+# letters.remove('55')
+# print(letters)
+# del letters[0]
+# print(letters)
+# print(letters.pop(1))
+# print(letters.pop(1))
+# print(letters.pop(0))
+# print(letters)
+# letters.sort()#改变你提供的原始列表，而不是创建一个新的有序列表
+# print(letters)
+# letters.reverse()
+# print(letters)
 
 """
 控制流
@@ -93,6 +95,16 @@ print(letters)
 # hello('Alice')
 # hello('Bob')
 
+def printMyNameBig():
+    print("  CCCC       A       RRRRR  TTTTTTT  EEEEEE  RRRRR  ")
+    print(" C    C     A A      R    R    T     E       R    R ")
+    print("C          A   A     R    R    T     EEEE    R    R ")
+    print("C         AAAAAAA    RRRRR     T     E       RRRRR  ")
+    print(" C    C  A       A   R    R    T     E       R    R ")
+    print("  CCCC  A         A  R     R   T     EEEEEE  R     R")
+    print()
+for i in range(2):
+    printMyNameBig();
 
 '''类'''
 class Dog():
@@ -103,6 +115,11 @@ class Dog():
         self.name = name
         self.age = age
 
+     #特殊方法是 __str__()，它会告诉 Python 打印（print）一个对象时具体显示什么内容。
+    def __str__(self):
+        msg = "Hi, I'm a " + self.name + " " + str(self.age) + " ball!"
+        return msg
+
     def sit(self):
         """模拟小狗被命令时蹲下"""
         print(self.name.title() + " is now sitting.")
@@ -111,9 +128,9 @@ class Dog():
         """模拟小狗被命令时打滚"""
         print(self.name.title() + " rolled over!")
 
-
-# d = Dog('jack',10)
+d = Dog('jack',10)
 # d.sit()
+print(d)
 
 '''继承'''
 # class Car():
