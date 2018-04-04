@@ -64,6 +64,9 @@ print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 空集输出为 set()
 '''
 print(set())
+s_test ={1,2,3,4}
+s_test.add('a')
+print(s_test)
 
 
 
