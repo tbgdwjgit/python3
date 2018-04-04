@@ -23,6 +23,14 @@ print('What is your age?') # ask for their age
 myAge = input()
 print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 
+
+变量名只能包含以下字符：
+•  小写字母（a~z）
+•  大写字母（A~Z）
+•  数字（0~9）
+•  下划线（_）
+名字不允许以数字开头。
+
 '''
 
 '''
@@ -239,3 +247,5 @@ pip install xlrd
 # var.plot(kind='line')
 #
 # plt.show()
+
+
