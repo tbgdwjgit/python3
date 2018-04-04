@@ -57,6 +57,17 @@ print('You will be ' + str(int(myAge) + 1) + ' in a year.')
 # letters.reverse()
 # print(letters)
 
+'''
+集合
+[] 能创建一个空列表
+{} 会创建一个空字典
+空集输出为 set()
+'''
+print(set())
+
+
+
+
 """
 控制流
 """
