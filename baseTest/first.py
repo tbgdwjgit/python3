@@ -125,8 +125,8 @@ def printMyNameBig():
     print(" C    C  A       A   R    R    T     E       R    R ")
     print("  CCCC  A         A  R     R   T     EEEEEE  R     R")
     print()
-for i in range(2):
-    printMyNameBig();
+# for i in range(2):
+#     printMyNameBig();
 
 '''类'''
 class Dog():
@@ -152,7 +152,7 @@ class Dog():
 
 d = Dog('jack',10)
 # d.sit()
-print(d)
+# print(d)
 
 '''继承'''
 # class Car():
@@ -213,14 +213,16 @@ def transformCodec(re_data):#ascii (gbk) 转 unicode
     return re_data
 
 
-# textFile = open(os.path.pardir +'\\readme.txt')
+textFile = open(os.path.pardir +'\\readme.txt')
 # textFile ='C:\\Users\\Test-YLL\\PycharmProjects\\python3\\test.txt'
 # textFile =u'test.txt'
-# print(textFile)
-# # with open('test.txt') as file_object:
-# with open(textFile) as file_object:
-#     contents = file_object.read()
-#     print(contents)
+print(textFile)
+print(os.path.dirname(os.getcwd()) +'\\readme.txt')
+textFile = os.path.dirname(os.getcwd()) +'\\readme.txt'
+# with open('test.txt') as file_object:
+with open(textFile) as file_object:
+    contents = file_object.read()
+    print(contents)
 
 # print(os.getcwd())
 # print(os.path.dirname(os.getcwd()))
