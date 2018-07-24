@@ -23,3 +23,4 @@ bug汇总：
 修改 url 的值为：url = git@.github.com:user_name/repos_name.git
 设置完成后, 在这个工程目录 git push 会自动免密提交代码。
 user_name 是指定 Github 账户名。
+
