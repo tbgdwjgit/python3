@@ -16,12 +16,4 @@ bug汇总：
 
 
 
-为已经检出的项目更换地址
-修改项目中 .git/config文件中的[remote "origin"] ，
-修改 url 的值为：url = git@.github.com:user_name/repos_name.git
-设置完成后, 在这个工程目录 git push 会自动免密提交代码。
-user_name 是指定 Github 账户名。
-
-
-测试一下
 
