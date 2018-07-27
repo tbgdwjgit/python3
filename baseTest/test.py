@@ -22,4 +22,3 @@ c = conn.cursor()
 conn.commit()
 conn.close()
 print (c.rowcount)
-
