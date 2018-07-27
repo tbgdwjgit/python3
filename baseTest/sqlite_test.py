@@ -19,6 +19,18 @@ c = conn.cursor()
 # c.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (3, 'Teddy', 23, 'Norway', 20000.00 )");
 # c.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 )");
 
+#SELECT 操作
+cursor = c.execute("SELECT id, name, address, salary  from COMPANY")
+for row in cursor:
+   print("ID = ", row[0])
+   print("NAME = ", row[1])
+   print("ADDRESS = ", row[2])
+   print("SALARY = ", row[3], "\n")
+
+#UPDATE 操作
+
+
+
 conn.commit()
 conn.close()
 print (c.rowcount)
