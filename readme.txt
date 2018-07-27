@@ -16,6 +16,13 @@ bug汇总：
 
 
 
+运行pythonp 提示：please select a valid interpreter
+打开settings（CTRL + ALT + S）
+双击 project Interpreter
+在 Project Interpreter选择编译器，点击apply，重新启动pycharm即可。
+
+
+
 
 
 

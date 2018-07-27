@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="captcha-tensorflow" />
     <orderEntry type="module" module-name="Test" />
+    <orderEntry type="module" module-name="Django1.10.8" />
   </component>
 </module>
