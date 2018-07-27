@@ -21,7 +21,9 @@ bug汇总：
 双击 project Interpreter
 在 Project Interpreter选择编译器，点击apply，重新启动pycharm即可。
 
-
+提示信息为：error setting certificate verify locations ！
+使用git 客户端输入：
+$ git config --global http.sslverify "false"
 
 
 
