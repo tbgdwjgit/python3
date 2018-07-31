@@ -36,3 +36,4 @@ python -m pip install --upgrade pip
 
 安装的包：
 pip install mysql-connector-python
+pip install Demjson
