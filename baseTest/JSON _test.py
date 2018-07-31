@@ -8,8 +8,10 @@ data = [ { 'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5 } ]
 json = json.dumps(data)
 print(json)
 
-# 与dumps相反，将json对象转变为字典对象返回
-
+# 与dumps相反，将json对象转变为字典对象返回???
+data =  '{"a":1,"b":2,"c":3,"d":4,"e":5}'
+json = json.load(data)
+print(json)
 
 
 
