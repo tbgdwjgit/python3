@@ -62,11 +62,18 @@ print('重复'*3)
 # import os
 # os.system(r"C:\Program Files\Internet Explorer\iexplore.exe")
 
-import webbrowser
+# import webbrowser
+# webbrowser.open('www.163.com')#打开网页
 
-webbrowser.open('www.163.com')#打开网页
-
-
+import heapq
+heap=[]#堆
+heapq.heappush(heap,3)
+heapq.heappush(heap,5)
+heapq.heappush(heap,7)
+heapq.heappush(heap,4)
+heapq.heappush(heap,6)
+heapq.heappush(heap,8)
+print(heap)
 
 
 
