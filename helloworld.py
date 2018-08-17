@@ -59,9 +59,12 @@ print_max(12,1)
 print('重复'*3)
 
 
+# import os
+# os.system(r"C:\Program Files\Internet Explorer\iexplore.exe")
 
+import webbrowser
 
-
+webbrowser.open('www.163.com')#打开网页
 
 
 
