@@ -35,4 +35,12 @@ pip install --upgrade pip
 
 安装的包：
 pip install mysql-connector-python
+
+编码和解码 JSON 对象
 pip install Demjson
+
+一般而言，基础爬虫的两大请求库urllib和requests中requests通常为大多数人所钟爱，当然urllib也功能齐全。
+两大解析库BeautifulSoup因其强大的HTML文档解析功能而备受青睐，另一款解析库lxml在搭配xpath表达式的基础上也效率提高。
+pip install requests
+pip install bs4
+pip install lxml
