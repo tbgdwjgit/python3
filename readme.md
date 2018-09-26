@@ -11,4 +11,32 @@ help()  help(math.pow) 使用方法和相关说明。
 
 
 
+代码调试：
 
+一般来说，python下面要么使用log，要么使用pdb。
+import logging
+logging.basicConfig(filename='123.log',level=logging.INFO)  #允许定义输出信息的级别：debug, info, warning, error,
+
+logging.info("ee")
+
+使用PDB的方式有两种:
+
+1. 单步执行代码,通过命令 python -m pdb xxx.py 启动脚本，进入单步执行模式
+
+2. pdb单步执行太麻烦了，所以第二种方法是import pdb 之后，直接在代码里需要调试的地方放一个
+pdb.set_trace()，就可以设置一个断点， 程序会在pdb.set_trace()暂停并进入pdb调试环境，
+可以用pdb 变量名查看变量，或者c继续运行
+
+
+常用命令
+
+命令	        用途
+break 或 b	设置断点
+continue 或 c	继续执行程序, 或是跳到下个断点
+list 或 l	查看当前行的代码段
+step 或 s	进入函数
+return 或 r	执行代码直到从当前函数返回
+exit 或 q	中止并退出
+next 或 n	执行下一行
+p 或!	        打印变量的值，例如p a
+help 或 h	帮助
