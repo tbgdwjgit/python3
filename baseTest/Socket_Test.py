@@ -1,7 +1,7 @@
 __author__ = 'Test-YLL'
 
 """
-socket服务端
+TCP socket服务端
 """
 import socket
 
@@ -21,7 +21,7 @@ while True:
 conn.close()
 
 """
-socket客户端
+TCP socket客户端
 """
 import socket
 
@@ -36,3 +36,41 @@ while data:
     print("Receive form server:\n",data.decode('utf-8'))
     data = input('please input a info:\n')
 s.close()
+
+"""
+UDP socket服务端
+"""
+import socket
+
+HOST=''
+PORT=10888
+s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+s.bind((HOST,PORT))
+data = True
+while data:
+    data,address = s.recvfrom(1024)
+    if data==b'bye':
+        break
+    print("Received String:",data.decode('utf-8'))
+    s.sendto(data,address)
+s.close()
+
+"""
+UDP socket客户端
+"""
+import socket
+
+HOST='localhost'
+PORT=10888
+s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+data = "你好！"
+while data:
+    s.sendto(data.encode('utf-8'),(HOST,PORT))
+    if data =='bye':
+        break
+    data,addr = s.recvfrom(512)
+    print("Receive form server:\n",data.decode('utf-8'))
+    data = input('please input a info:\n')
+s.close()
+
+
