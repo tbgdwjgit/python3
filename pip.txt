@@ -44,3 +44,9 @@ pip install Demjson
 pip install requests
 pip install bs4
 pip install lxml
+
+Pyinstaller 打包
+pip install pyinstaller
+pyinstaller -F hello.py
+pyinstaller -F hello.py --noconsole
+pyinstaller -F hello.py --noconsole -i JobLab.ico
