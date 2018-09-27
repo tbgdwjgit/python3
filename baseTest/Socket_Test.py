@@ -23,6 +23,7 @@ conn.close()
 """
 TCP socket客户端
 """
+# coding:utf-8
 import socket
 
 HOST='localhost'
@@ -58,6 +59,7 @@ s.close()
 """
 UDP socket客户端
 """
+# coding:utf-8
 import socket
 
 HOST='localhost'
