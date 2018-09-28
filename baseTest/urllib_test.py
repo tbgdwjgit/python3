@@ -1,7 +1,9 @@
 __author__ = 'Test-YLL'
 
 # coding utf-8
-
+'''
+百度搜索
+'''
 from urllib.request import urlopen
 from urllib.parse import urlencode
 import re
@@ -17,3 +19,15 @@ title = [item[item.find('href=')+6:item.find('target=')] for item in title]
 title = [item.replace(' ','').replace('"','') for item in title]
 for item in title:
     print(item)
+
+
+'''
+HTTPConnection
+'''
+from http.client import HTTPConnection
+
+mc = HTTPConnection('www.baidu.com:80')
+mc.request('GET','/')
+res = mc.getresponse()
+print(res.status,res.reason)
+print(res.read().decode('utf-8'))
