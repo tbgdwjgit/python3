@@ -50,3 +50,6 @@ pip install pyinstaller
 pyinstaller -F hello.py
 pyinstaller -F hello.py --noconsole
 pyinstaller -F hello.py --noconsole -i JobLab.ico
+
+图像处理Pillow
+pip install pillow
