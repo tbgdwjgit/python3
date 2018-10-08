@@ -4,4 +4,17 @@ __author__ = 'Test-YLL'
 
 from PIL import Image
 
-imga = Image.open('E:\\12.jpg')
+imga = Image.open('E:\\15.jpg')
+imgb = Image.open('E:\\13.jpg')
+
+# Image.blend(imga,imgb,0.5).show()
+
+# mask = Image.open('E:\\13.jpg')
+# Image.composite(imga,imgb,mask).show()
+
+from PIL import ImageFilter
+img_output = Image.open('E:\\14.jpg')
+
+b = imga.filter(ImageFilter.GaussianBlur)
+img_output.paste(b,(224,0))
+img_output.show()
