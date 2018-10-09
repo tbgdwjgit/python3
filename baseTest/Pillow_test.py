@@ -79,3 +79,22 @@ imgb = Image.open(r'E:\13.jpg')
 imgc = Image.open(r'E:\中文名称.jpg')#打开图片
 # imgc.show()#展示图片
 # print(imgc.mode,imgc.size,imgc.format)#打印图片信息
+# imgc.save("E:\测试.png","png")#保存图片
+# newImg = Image.new("RGBA",(640,480),(0,255,0))#创建一个新的图片
+# newImg.save(r"E:\newImg.png","PNG")#说明：“RGBA”为图片的mode，（640，480）为图片尺寸，(0,255,0)为图片颜色，颜色第四位为alpha值，可填可不填。
+# smallimg = imgc.resize((128,128),Image.ANTIALIAS) #改变图片尺寸
+# smallimg.show() #说明：(128,128)为更改后的尺寸，Image.ANTIALIAS有消除锯齿的效果。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
