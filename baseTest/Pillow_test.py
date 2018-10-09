@@ -65,17 +65,17 @@ imgb = Image.open(r'E:\13.jpg')
 #         img_output.show()
 
 #画图
-from PIL import ImageDraw
-
-# a = Image.new('RGB',(200,200),'white')
-a = imga
-drw = ImageDraw.Draw(a)
-drw.rectangle((50,50,1000,600),outline='red')
-drw.text((60,60),'My First Draw',fill='green')
-# drw.arc((500,500),0,50,fill='yellow')
-drw.arc((200,200,300,300),-360, 0, fill = (0,0,255))
-a.show()
-# a.save(r'E:\15test.jpg')#保存图片
+# from PIL import ImageDraw
+#
+# # a = Image.new('RGB',(200,200),'white')
+# a = imga
+# drw = ImageDraw.Draw(a)
+# drw.rectangle((50,50,1000,600),outline='red')
+# drw.text((60,60),'My First Draw',fill='green')
+# # drw.arc((500,500),0,50,fill='yellow')
+# drw.arc((200,200,300,300),-360, 0, fill = (0,0,255))
+# a.show()
+# # a.save(r'E:\15test.jpg')#保存图片
 
 imgc = Image.open(r'E:\中文名称.jpg')#打开图片
 # imgc.show()#展示图片
@@ -115,6 +115,55 @@ img=Image.open(u'E:\中文名称.jpg')
 
 # fixedIm=img.rotate(90)#旋转图片rotate
 # fixedIm.save("E:\\fixedIm.png","png") #说明：fixedIm=img.rotate(90)，将图片img逆时针旋转90度，存到fixedIm中。
+
+#Logo
+import os
+from PIL import Image
+import tkinter
+import tkinter.filedialog
+import tkinter.messagebox
+
+class Window:
+    def __init__(self):
+        self.root = root = tkinter.Tk()
+        self.Image = tkinter.StringVar()
+        self.status = tkinter.StringVar()
+        self.mstatus = tkinter.IntVar()
+        self.fstatus = tkinter.IntVar()
+        self.pstatus = tkinter.IntVar()
+        self.Image.set('bmp')
+        self.mstatus.set(0)
+        self.fstatus.set(0)
+        self.pstatus.set(0)
+        label = tkinter.Label(root,text='Logo')
+        label.place(x=5,y=5)
+        self.entryLogo = tkinter.Entry(root)
+        self.entryLogo.place(x=50,y=5)
+        self.buttonBrowserLogo = tkinter.Button(root,text='浏览',command = self.BrowserLogo)
+        self.buttonBrowserLogo.place(x=200,y=5)
+        self.checkM = tkinter.Checkbutton(root,text ='批量转换',command = self.OnCheckM,
+                 variable = self.mstatus,
+                 onvalue =1,
+                 offvalue =0 )
+        self.checkM.place(x=5,y=30)
+        label = tkinter.Label(root,text='选择文件')
+        label.place(x=5,y=55)
+        self.entryFile = tkinter.Entry(root)
+        self.entryFile.place(x=60,y=55)
+        label = tkinter.Label(root,text='选择目录')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
