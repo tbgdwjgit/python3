@@ -19,9 +19,18 @@ from PIL import ImageFilter
 w,h = imga.size
 img_output = Image.new('RGB',(2*w,h))
 img_output.paste(imga,(0,0))
-b = imga.filter(ImageFilter.GaussianBlur)
+b = imga.filter(ImageFilter.GaussianBlur(5))
 img_output.paste(b,(w,0))
 img_output.show()
+
+
+
+
+
+
+
+
+
 
 
 
