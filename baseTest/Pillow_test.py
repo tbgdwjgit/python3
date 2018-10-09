@@ -142,9 +142,7 @@ class Window:
         self.buttonBrowserLogo = tkinter.Button(root,text='浏览',command = self.BrowserLogo)
         self.buttonBrowserLogo.place(x=200,y=5)
         self.checkM = tkinter.Checkbutton(root,text ='批量转换',command = self.OnCheckM,
-                 variable = self.mstatus,
-                 onvalue =1,
-                 offvalue =0 )
+                 variable = self.mstatus,onvalue =1,offvalue =0 )
         self.checkM.place(x=5,y=30)
         label = tkinter.Label(root,text='选择文件')
         label.place(x=5,y=55)
