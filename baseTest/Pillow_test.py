@@ -65,16 +65,17 @@ imgb = Image.open(r'E:\13.jpg')
 #         img_output.show()
 
 #画图
-# from PIL import ImageDraw
-#
-# # a = Image.new('RGB',(200,200),'white')
-# a = imga
-# drw = ImageDraw.Draw(a)
-# drw.rectangle((50,50,1000,600),outline='red')
-# drw.text((60,60),'My First Draw',fill='green')
-# # drw.arc((500,500),0,50,fill='yellow')
-# a.show()
-# # a.save(r'E:\15test.jpg')#保存图片
+from PIL import ImageDraw
+
+# a = Image.new('RGB',(200,200),'white')
+a = imga
+drw = ImageDraw.Draw(a)
+drw.rectangle((50,50,1000,600),outline='red')
+drw.text((60,60),'My First Draw',fill='green')
+# drw.arc((500,500),0,50,fill='yellow')
+drw.arc((200,200,300,300),-360, 0, fill = (0,0,255))
+a.show()
+# a.save(r'E:\15test.jpg')#保存图片
 
 imgc = Image.open(r'E:\中文名称.jpg')#打开图片
 # imgc.show()#展示图片
@@ -86,11 +87,34 @@ imgc = Image.open(r'E:\中文名称.jpg')#打开图片
 # smallimg.show() #说明：(128,128)为更改后的尺寸，Image.ANTIALIAS有消除锯齿的效果。
 
 
+from PIL import ImageDraw
+img=Image.open(u'E:\中文名称.jpg')
+# a=ImageDraw.Draw(img) #使用ImageDraw库进行画图
+# a.line(((0,0),(508,493)),fill=(255,0,0))
+# a.line(((0,493),(508,0)),fill=(0,255,0,0))
+# a.arc((10,10,100,100),0,360,fill=255)
+# #因为PIL库编译时缺少东西，所以导致字体不能更改
+# #font = ImageFont.truetype ("Arial.ttf",16)
+# a.text((10,10),"hello",fill=(255,0,0),font=None)
+# img.save("E:\img1.png")
+'''
+说明：1.画图需要导入ImageDraw库。
+　　　2.a=ImageDraw.Draw(img)，对img图像进行画图操作
+　　　3.a.line，画直线。((0,0),(508,493))为直线左右起点的坐标。fill=(255,0,0)为直线填充的颜色。
+　　　4.a.arc，画弧线。(10,20,100,300)为弧线最左侧距离左边、弧线最上面距离上面、弧线最右面距离左面、弧线最下面距离左边的距离。fill=255为填充的颜色，也可以写成(255,0,0,0)的格式。
+　　　5.a.text为添加文字，(10,10)为添加文字的位置，fill=(255,0,0)为填充文字的颜色，font为文字的字体，None为没有样式，font可以自定义。自定义方法为font = ImageFont.truetype ("Arial.ttf",16)
+'''
 
+# img.getpixel((4,4))#对像素进行操作getpixel，putpixel
+# img.putpixel((4,4),(255,0,0))
+# img.save("E:\img1.png","png")
+'''
+说明：getpixel得到图片img的坐标为(4,4)的像素点。putpixel将坐标为(4,4)的像素点变为(255,0,0)颜色，即红色。
+结果如下图所示（因为只有一个像素点，所以不是很清晰）：
+'''
 
-
-
-
+# fixedIm=img.rotate(90)#旋转图片rotate
+# fixedIm.save("E:\\fixedIm.png","png") #说明：fixedIm=img.rotate(90)，将图片img逆时针旋转90度，存到fixedIm中。
 
 
 
