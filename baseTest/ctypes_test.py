@@ -23,9 +23,9 @@ print(str)
 # rc = dll.testpchar()
 # rc = ctypes.c_wchar_p(rc)
 # print(rc.value)
-rc = dll.teststring()
-rc = ctypes.c_char_p(rc)
-print(rc.value)
+# rc = dll.teststring()
+# rc = ctypes.c_char_p(rc)
+# print(rc.value)
 
 
 
