@@ -198,7 +198,7 @@ class Window:
         self.labelStatus = tkinter.Label(root,textvariable=self.status)
         self.labelStatus.place(x=150,y=205)
     def MainLoop(self):#进入消息循环
-        self.root.mainsize(250,270)
+        self.root.minsize(250,270)
         self.root.maxsize(250,270)
         self.root.mainloop()
     def BrowserLogo(self):
@@ -207,21 +207,108 @@ class Window:
         if file:
             self.entryLogo.delete(0,tkinter.END)
             self.entryLogo.insert(tkinter.END,file)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def BrowserDir(self):#选择路径
+        directory = tkinter.filedialog.askdirectory(title='Python')
+        if directory:
+            self.entryDir.delete(0,tkinter.END)
+            self.entryDir.insert(tkinter.END,directory)
+    def BrowserFile(self): #选择文件
+        file = tkinter.filedialog.askopenfilename(title='',
+            filetypes =[('JPG','*.jpg'),('BMP','*.bmp'),('GIF','*.gif'),('PNG','*.png')])
+        if file:
+            self.entryFile.delete(0,tkinter.END)
+            self.entryFile.insert(tkinter.END,file)
+    def OnCheckM(self):#设置组件状态
+        if not self.mstatus.get():
+            self.entryDir.config(state=tkinter.DISABLED)
+            self.entryFile.config(state=tkinter.NORMAL)
+            self.buttonBrowserDir.config(state=tkinter.DISABLED)
+            self.buttonBrowserFile.config(state=tkinter.NORMAL)
+        else:
+            self.entryDir.config(state=tkinter.NORMAL)
+            self.entryFile.config(state=tkinter.DISABLED)
+            self.buttonBrowserDir.config(state=tkinter.NORMAL)
+            self.buttonBrowserFile.config(state=tkinter.DISABLED)
+    def OnCheckF(self):#设置组件状态
+        if not self.fstatus.get():
+            self.rBmp.config(state=tkinter.DISABLED)
+            self.rJpg.config(state=tkinter.DISABLED)
+            self.rGif.config(state=tkinter.DISABLED)
+            self.rPng.config(state=tkinter.DISABLED)
+        else:
+            self.rBmp.config(state=tkinter.NORMAL)
+            self.rJpg.config(state=tkinter.NORMAL)
+            self.rGif.config(state=tkinter.NORMAL)
+            self.rPng.config(state=tkinter.NORMAL)
+    def Add(self):#处理图片
+        n=0
+        if self.mstatus.get():
+            path = self.entryDir.get()
+            if path=='':
+                tkinter.messagebox.showerror('Python tkinter','请输入路径')
+                return
+            filenames = os.listdir(path)
+            if self.fstatus.get():
+                f=self.Image.get()
+                for filename in filenames:
+                    if filename[-3:] in ('bmp','jpg','gif','png'):
+                        self.addlogo(path+'/'+filename,f)
+                        n =n+1
+            else:
+                for filename in filenames:
+                    if filename[-3:] in ('bmp','jpg','gif','png'):
+                        self.addlogo(path+'/'+filename)
+                        n = n+1
+        else:
+            file = self.entryFile.get()
+            if file=='':
+                tkinter.messagebox.showerror('Python tkinter','请选择文件')
+                return
+            if self.fstatus.get():
+                f = self.Image.get()
+                self.addlogo(file,f)
+                n=n+1
+            else:
+                self.addlogo(file)
+                n=n+1
+        self.status.set('成功添加%d张图片'% n)
+    def addlogo(self,file,format=None):#向图片添加Logo
+        logo = self.entryLogo.get()
+        if logo=='':
+            tkinter.messagebox.showerror('Python tkinter','请选择Logo')
+            return
+        im = Image.open(file)
+        lo = Image.open(logo)
+        imwidth = im.size[0]
+        imheight = im.size[1]
+        lowidth = lo.size[0]
+        loheight = lo.size[1]
+        pos = self.pstatus.get()
+        if pos == 0:
+            left = 0
+            top = 0
+            right = lowidth
+            bottom = loheight
+        elif pos == 1:
+            left = imwidth - lowidth
+            top = 0
+            right = imwidth
+            bottom = loheight
+        elif pos == 2:
+            left = 0
+            top = imheight - loheight
+            right = lowidth
+            bottom = imheight
+        else:
+            left = imwidth - lowidth
+            top = imheight - loheight
+            right = imwidth
+            bottom = imheight
+        im.paste(lo,(left,top,right,bottom))
+        if format:
+            im.save(file[:(len(file)-4)]+'_logo.'+ format)
+        else:
+            im.save(file[:(len(file)-4)]+'_logo'+ file[-4:])
 
 window = Window()
 window.MainLoop()
