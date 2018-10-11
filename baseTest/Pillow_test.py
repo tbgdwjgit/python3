@@ -148,8 +148,83 @@ class Window:
         label.place(x=5,y=55)
         self.entryFile = tkinter.Entry(root)
         self.entryFile.place(x=60,y=55)
+        self.buttonBrowserFile = tkinter.Button(root,text ='浏览',command = self.BrowserFile)
+        self.buttonBrowserFile.place(x=200,y=55)
         label = tkinter.Label(root,text='选择目录')
+        label.place(x=5,y=80)
+        self.entryDir = tkinter.Entry(root,state = tkinter.DISABLED)
+        self.entryDir.place(x=60,y=80)
+        self.buttonBrowserDir = tkinter.Button(root,text='浏览',
+                                               command = self.BrowserDir,
+                                               state = tkinter.DISABLED)
+        self.buttonBrowserDir.place(x=200,y=80)
 
+        self.checkF = tkinter.Checkbutton(root,text='改变文件格式',
+                                          command = self.OnCheckF,
+                                          variable = self.fstatus,
+                                          onvalue =1,
+                                          offvalue =0)
+        self.checkF.place(x=5,y=110)
+        frame = tkinter.Frame(root)
+        frame.place(x=10,y=130)
+        labelTo = tkinter.Label(frame,text='格式')
+        labelTo.pack(anchor='w')
+        self.rBmp = tkinter.Radiobutton(frame,variable = self.Image,
+                                        value='bmp', text = 'BMP',state=tkinter.DISABLED)
+        self.rBmp.pack(anchor='w')
+        self.rJpg = tkinter.Radiobutton(frame,variable = self.Image,
+                                        value='jpg', text = 'JPG',state=tkinter.DISABLED)
+        self.rJpg.pack(anchor='w')
+        self.rGif = tkinter.Radiobutton(frame,variable = self.Image,
+                                        value='gif', text = 'GIF',state=tkinter.DISABLED)
+        self.rGif.pack(anchor='w')
+        self.rPng = tkinter.Radiobutton(frame,variable = self.Image,
+                                        value='png', text = 'PNG',state=tkinter.DISABLED)
+        self.rPng.pack(anchor='w')
+        pframe = tkinter.Frame(root)
+        pframe.place(x=70,y=130)
+        labelPos = tkinter.Label(pframe,text='位置')
+        labelPos.pack(anchor='w')
+        self.rLT = tkinter.Radiobutton(pframe,variable = self.pstatus,value=0,text='左上角')
+        self.rLT.pack(anchor='w')
+        self.rRT = tkinter.Radiobutton(pframe,variable = self.pstatus,value=0,text='右上角')
+        self.rRT.pack(anchor='w')
+        self.rLB = tkinter.Radiobutton(pframe,variable = self.pstatus,value=0,text='左下角')
+        self.rLB.pack(anchor='w')
+        self.rRB = tkinter.Radiobutton(pframe,variable = self.pstatus,value=0,text='右下角')
+        self.rRB.pack(anchor='w')
+        self.buttonAdd = tkinter.Button(root,text ='增加',command = self.Add)
+        self.buttonAdd.place(x=180,y=175)
+        self.labelStatus = tkinter.Label(root,textvariable=self.status)
+        self.labelStatus.place(x=150,y=205)
+    def MainLoop(self):#进入消息循环
+        self.root.mainsize(250,270)
+        self.root.maxsize(250,270)
+        self.root.mainloop()
+    def BrowserLogo(self):
+        file = tkinter.filedialog.askopenfilename(title='Python Music Player',
+            filetypes=[('JPG','*.jpg'),('BMP','*.bmp'),('GIF','*.gif'),('PNG','*.png')])
+        if file:
+            self.entryLogo.delete(0,tkinter.END)
+            self.entryLogo.insert(tkinter.END,file)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window = Window()
+window.MainLoop()
 
 
 
