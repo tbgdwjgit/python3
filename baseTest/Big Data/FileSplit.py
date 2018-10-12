@@ -8,8 +8,17 @@ __author__ = 'Test-YLL'
 import os,os.path,time
 
 def FileSplit(sourceFile,targetFolder):
-    sFile = open(sourceFile,'r')
-    number = 500 #每个文件保存记录条数
+    sFile = open(sourceFile,'r',errors='ignore')
+    '''
+   python读取中编码错误（illegal multibyte sequence ）
+   读取中文txt文件时，经常会出现: ‘gbk' codec can't decode bytes in position 31023: illegal multibyte sequence。
+   这种情况就是文章中含有utf-8或gbk无法编码的字符情况。
+   好多人都说加入'ignore'，但一直都没有说清楚是在open函数中加入，还是在.read()中加入（其实是在open函数中加入，如下面例子）。
+   'gb1830'所含的比'gbk'要多，因此下面代码段采用了'gb1830'。
+   cf=open("D:\python_code\天龙八部.txt",encoding='gb18030',errors='ignore')
+   cf1=cf.read()
+   '''
+    number = 50000 #每个文件保存记录条数
     dataLine = sFile.readline()
     tempData = [] #缓存列表
     fileNum = 1
