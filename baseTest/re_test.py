@@ -8,7 +8,8 @@ import  re
 """
 
 # m = re.match('f...','fo#d.fdo')
-m = re.match('\d{3}.\d{3}.\d{3}.\d{3}','122.122.122.122')
+# m = re.match('\d{3}.\d{3}.\d{3}.\d{3}','122.122.122.122')
+m = re.match('b[aie]r','barbir')
 print(m.group())
 
 
