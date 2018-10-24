@@ -17,6 +17,8 @@ import  re
 
 # m = re.match('fo','fo#d.fdowqqqqqqqqqqqq')
 m = re.search('fo','wwwwwwwwwfo#d.fdowqqqqqqqqqqqq')
+m = re.match('\w+@(\w+\.)?\w+\.com','1eee@163.com')
+
 if m is not None:
     print(m.group())
 
