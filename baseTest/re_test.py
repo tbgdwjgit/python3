@@ -9,11 +9,16 @@ import  re
 
 # m = re.match('f...','fo#d.fdo')
 # m = re.match('\d{3}.\d{3}.\d{3}.\d{3}','122.122.122.122')
-m = re.match('b[aie]r','barbir')
-print(m.group())
+# m = re.match('b[aie]r','barbir')
+# m = re.search('bar','ffbarberffbir')
+# print(m.group())
+# print(m.groups())
 
 
-
+# m = re.match('fo','fo#d.fdowqqqqqqqqqqqq')
+m = re.search('fo','wwwwwwwwwfo#d.fdowqqqqqqqqqqqq')
+if m is not None:
+    print(m.group())
 
 
 
