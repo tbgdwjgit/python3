@@ -108,5 +108,7 @@ for eachLine in f:
 f.close()
 
 m = re.search('[bh][aie]r','ddhir')
+m= re.match('[A-Za-z-]+ [A-Za-z-]+','Jack-w Tom-w')
+m= re.match('[A-Za-z-]+, [A-Za-z]','Jack-w, Tom-w')
 if m is not None:
     print(m.group())
