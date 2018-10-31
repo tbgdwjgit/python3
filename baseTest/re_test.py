@@ -97,9 +97,16 @@ if m is not None:
 #     print(m.group(1))
 #     print(m.group(2))
 #     print(m.groups())
-#
-# m = re.split('\.','135.33.33.33')
-# print(m)
 
+m = re.split('\.','135.33.33.33')
+print(m)
+print('135.33.33.33'.split('.'))
 
+f = open('whodata.txt', 'r')
+for eachLine in f:
+    print(re.split(r'\s\s+', eachLine))
+f.close()
 
+m = re.search('[bh][aie]r','ddhir')
+if m is not None:
+    print(m.group())
