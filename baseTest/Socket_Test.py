@@ -2,7 +2,7 @@ __author__ = 'Test-YLL'
 
 """
 TCP socket服务端
-
+socket(socket_family, socket_type, protocol=0) socket_family是AF_UNIX或AF_INET， socket_type是SOCK_STREAM。protocol通常省略，默认为0。
 """
 import socket
 
@@ -41,6 +41,7 @@ s.close()
 
 """
 UDP socket服务端
+socket(socket_family, socket_type, protocol=0) socket_family是AF_UNIX或AF_INET， socket_type是SOCK_DGRAM。protocol通常省略，默认为0。
 """
 import socket
 
