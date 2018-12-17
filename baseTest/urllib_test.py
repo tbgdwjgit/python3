@@ -90,9 +90,8 @@ url='http://www.baidu.com/s?wd='+keywd
 '''
 keywd='长城号'
 key_code=urllib.request.quote(keywd)
-
-
 url='http://www.baidu.com/s?wd='+key_code
+
 req=urllib.request.Request(url)
 data=urllib.request.urlopen(req).read()
 fhandle=open('E:/test1217.html','wb')
