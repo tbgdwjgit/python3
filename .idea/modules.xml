@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Delphi/.idea/Delphi.iml" filepath="$PROJECT_DIR$/../Delphi/.idea/Delphi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Delphi/.idea/Delphi.iml" filepath="$PROJECT_DIR$/../Delphi/.idea/Delphi.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/hello.iml" filepath="$PROJECT_DIR$/.idea/hello.iml" />
     </modules>
   </component>

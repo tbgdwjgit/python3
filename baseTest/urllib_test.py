@@ -33,7 +33,7 @@ print(res.status,res.reason)
 print(res.read().decode('utf-8'))
 
 
-
+"""
 import urllib.request
 
 #file = urllib.request.urlopen('http://www.baidu.com')
@@ -73,3 +73,30 @@ data =urllib.request.urlopen(req).read()
 fhandle = open('111.html','wb')
 fhandle.write(data)
 fhandle.close()
+
+
+# for i in range(1,10):
+#     try:
+#         file = urllib.request.urlopen('http://www.baidu.com',timeout=1)
+#         data = file.read()
+#         print(len(data))
+#     except Exception as e:
+#         print('出现异常-->'+ str(e))
+
+keywd='hello'
+url='http://www.baidu.com/s?wd='+keywd
+'''
+  中文要编码
+'''
+keywd='长城号'
+key_code=urllib.request.quote(keywd)
+
+
+url='http://www.baidu.com/s?wd='+key_code
+req=urllib.request.Request(url)
+data=urllib.request.urlopen(req).read()
+fhandle=open('E:/test1217.html','wb')
+fhandle.write(data)
+fhandle.close()
+
+"""
