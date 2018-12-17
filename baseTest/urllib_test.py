@@ -31,3 +31,45 @@ mc.request('GET','/')
 res = mc.getresponse()
 print(res.status,res.reason)
 print(res.read().decode('utf-8'))
+
+
+
+import urllib.request
+
+#file = urllib.request.urlopen('http://www.baidu.com')
+##data = file.readlines()
+#data1 = file.read()
+##for d in data:
+    ##print(d)
+#fhandle = open('1.html','wb')
+#fhandle.write(data1)
+#fhandle.close()
+
+
+'''
+#urllib.request.urlretrieve('http://www.baidu.com',filename='2.html')
+#urllib.request.urlretrieve('http://edu.51cto.com',filename='2.html')
+urllib.request.urlretrieve('http://www.163.com',filename='2.html')
+urllib.request.urlcleanup
+'''
+
+'''build_opener()'''
+##url = 'http://blog.csdn.net/weiwei_pig/article/details/51178226'
+#url = 'http://www.baidu.com'
+#headers = ('User-Agent','Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.3251.400 QQBrowser/9.5.10937.400')
+#opener = urllib.request.build_opener()
+#opener.addheaders = [headers]
+#data = opener.open(url).read()
+
+#fhandle = open('11.html','wb')
+#fhandle.write(data)
+#fhandle.close()
+
+'''add_header()'''
+url = 'http://www.baidu.com'
+req = urllib.request.Request(url)
+req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.3251.400 QQBrowser/9.5.10937.400')
+data =urllib.request.urlopen(req).read()
+fhandle = open('111.html','wb')
+fhandle.write(data)
+fhandle.close()
