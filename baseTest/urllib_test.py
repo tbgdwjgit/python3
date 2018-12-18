@@ -98,4 +98,13 @@ fhandle=open('E:/test1217.html','wb')
 fhandle.write(data)
 fhandle.close()
 
+
+import urllib.error
+try:
+    urllib.request.urlopen('http://blog.csdn.net')
+except urllib.error.URLError as e:
+# except urllib.error.HTTPError as e:
+    print(e.code)
+    print(e.reason)
+
 """
