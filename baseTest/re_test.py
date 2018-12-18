@@ -112,3 +112,20 @@ m= re.match('[A-Za-z-]+ [A-Za-z-]+','Jack-w Tom-w')
 m= re.match('[A-Za-z-]+, [A-Za-z]','Jack-w, Tom-w')
 if m is not None:
     print(m.group())
+
+
+'''预编译全局匹配 '''
+string ='hellomypythonhispythonourpythonend'
+pattern = re.compile('.python.')
+result = pattern.findall(string)
+print(result)
+
+'''替换'''
+string ='hellomypythonhispythonourpythonend'
+pattern = 'python.'
+result1=re.sub(pattern,'php',string)
+result2=re.sub(pattern, 'php',string,2)
+print(result1)
+print(result2)
+
+

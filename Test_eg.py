@@ -4,13 +4,24 @@ __author__ = 'Test-YLL'
 
 # print('中方')
 
-import urllib.request
+# import urllib.request
+#
+# import urllib.error
+#
+# try:
+#     urllib.request.urlopen('http://blog.csdn.net')
+# except urllib.error.URLError as e:
+# # except urllib.error.HTTPError as e:
+#     print(e.code)
+#     print(e.reason)
 
-import urllib.error
+import re
 
-try:
-    urllib.request.urlopen('http://blog.csdn.net')
-except urllib.error.URLError as e:
-# except urllib.error.HTTPError as e:
-    print(e.code)
-    print(e.reason)
+string ='hellomypythonhispythonourpythonend'
+# pattern = re.compile('.python.')
+# result = pattern.findall(string)
+pattern = 'python.'
+result1=re.sub(pattern,'php',string)
+result2=re.sub(pattern, 'php',string,2)
+print(result1)
+print(result2)
