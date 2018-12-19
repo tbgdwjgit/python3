@@ -128,4 +128,22 @@ result2=re.sub(pattern, 'php',string,2)
 print(result1)
 print(result2)
 
+'''网址'''
+pattern = "[a-zA-Z]+://[^\s]*[.com|.cn]"
+string = "<a href='http://www.baidu.com.cn'>百度首页</a>"
+result = re.search(pattern,string)
+print(result)
+'''电话号码'''
+pattern = "\d{4}-\d{8}|\d{4}-\d{7}|\d{3}-\d{8}"
+string = "021-12345678"
+string = "0571-1234567"
+string = "0571-12345678"
+result = re.search(pattern,string)
+print(result)
+'''邮件地址'''
+pattern = "\w+([.+-]\w+)*@\w+([.-]\w+)*\.\w+([.-]\w+)*"
+string = "<a href='mailto:c-e+o@iqi-anyue.com.cn'>电子邮件地址</a>"
+result = re.search(pattern,string)
+print(result)
+
 
