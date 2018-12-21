@@ -1,7 +1,7 @@
 __author__ = 'Test-YLL'
 
 # coding:utf-8
-
+'''链接爬虫'''
 import  re
 import urllib.request
 def getlink(url):
@@ -22,6 +22,9 @@ def getlink(url):
 
 #要爬取的网页链接
 url ='http://blog.csdn.net/'
+url ='https://www.baidu.com/?tn=98010089_dg&ch=8'
+url ='http://www.ifeng.com/?from=newtab'
+url ='http://www.163.com/?from=newtab'
 #获取对应网页中包含的链接地址
 linklist = getlink(url)
 #通过for循环分别遍历输出获取到的链接地址到屏幕上
