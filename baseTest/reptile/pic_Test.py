@@ -16,6 +16,9 @@ adj.爬虫类的; 卑鄙的;
 import re
 import urllib.request
 
+
+'''京东手机图 '''
+'''
 def craw(url,page):
     html1=urllib.request.urlopen(url).read()
     html1=str(html1)
@@ -41,8 +44,12 @@ def craw(url,page):
 for i in range(1,7):
     url = "http://list.jd.com/list.html?cat=9987,653,655&page="+str(i)
     craw(url,i)
+'''
 
 
+
+
+''' test '''
 
 
 
