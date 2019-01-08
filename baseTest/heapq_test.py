@@ -7,3 +7,5 @@ print(heapq.nlargest(1,nums))
 print(heapq.nlargest(11,nums))#大到小
 print(heapq.nsmallest(1,nums))
 print(heapq.nsmallest(11,nums))#小到大
+print(min(nums))
+print(max(nums))
