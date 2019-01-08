@@ -15,13 +15,20 @@ __author__ = 'Test-YLL'
 #     print(e.code)
 #     print(e.reason)
 
-import re
+# import re
+#
+# string ='hellomypythonhispythonourpythonend'
+# # pattern = re.compile('.python.')
+# # result = pattern.findall(string)
+# pattern = 'python.'
+# result1=re.sub(pattern,'php',string)
+# result2=re.sub(pattern, 'php',string,2)
+# print(result1)
+# print(result2)
 
-string ='hellomypythonhispythonourpythonend'
-# pattern = re.compile('.python.')
-# result = pattern.findall(string)
-pattern = 'python.'
-result1=re.sub(pattern,'php',string)
-result2=re.sub(pattern, 'php',string,2)
-print(result1)
-print(result2)
+import heapq
+
+
+
+
+
