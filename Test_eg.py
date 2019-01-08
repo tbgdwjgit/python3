@@ -26,9 +26,9 @@ __author__ = 'Test-YLL'
 # print(result1)
 # print(result2)
 
-import heapq
-
-
+line = 'asdf fjdk; afed, fjek,asdf, foo'
+import re
+print(re.split(r'[;,\s]\s*', line))
 
 
 
