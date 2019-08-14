@@ -32,3 +32,7 @@ print(re.split(r'[;,\s]\s*', line))
 
 
 print('ww','测试')
+list1=['李白','杜甫','不不','沙沙']
+list2=['22','44','55','11']
+dictionary =dict(zip(list1,list2))
+print(dictionary)
