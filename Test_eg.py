@@ -36,3 +36,14 @@ list1=['李白','杜甫','不不','沙沙']
 list2=['22','44','55','11']
 dictionary =dict(zip(list1,list2))
 print(dictionary)
+print('55'in list2)
+
+list3=[1,2,3,4,5,6]
+for i,j in enumerate(list3) :
+    print(i,j)
+for i in enumerate(list3) :
+    print(i)
+
+
+
+
