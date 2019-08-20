@@ -46,6 +46,11 @@ for i in enumerate(list3) :
 
 
 for i in list1:
-    print(i,end =' ')
+    print(i,end=' ')
 
+def filterchar(string):
+    pattern = r'(黑客)|(抓包)|(监听)|(Trojan)'
+    sub = re.sub(pattern,'@_@',string)
+    print(sub)
 
+filterchar('我不黑客，我不抓包，我就监听一下。')
