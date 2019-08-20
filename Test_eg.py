@@ -45,5 +45,7 @@ for i in enumerate(list3) :
     print(i)
 
 
+for i in list1:
+    print(i,end =' ')
 
 
