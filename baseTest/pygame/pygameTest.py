@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 size = width, height = 640, 480
 screen = pygame.display.set_mode(size)
-color = (0, 26, 0)
+color = (0, 0, 155)
 
 ball = pygame.image.load('football1.png')
 ballrect = ball.get_rect()
